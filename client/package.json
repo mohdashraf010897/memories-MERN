@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Muhammad Ashraf <mohdashraf010897@gmail.com>",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5001",
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
