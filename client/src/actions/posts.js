@@ -1,4 +1,5 @@
 import * as api from "../api";
+import ACTION_TYPES from "../constants/actionTypes";
 
 // Action Creators
 export const getPosts = () => {
@@ -6,7 +7,7 @@ export const getPosts = () => {
     try {
       const { data } = await api.fetchPosts();
 
-      dispatch({ type: "FETCH_ALL", payload: data });
+      dispatch({ type: ACTION_TYPES.POST.FETCH_ALL, payload: data });
     } catch (error) {
       console.log("Error: ", error);
     }
@@ -18,7 +19,7 @@ export const createPost = (post) => {
     try {
       const { data } = await api.createPost(post);
 
-      dispatch({ type: "CREATE", payload: data });
+      dispatch({ type: ACTION_TYPES.POST.CREATE, payload: data });
     } catch (error) {
       console.log("Error: ", error);
     }
@@ -30,7 +31,7 @@ export const updatePost = (id, post) => {
     try {
       const { data } = await api.updatePost(id, post);
 
-      dispatch({ type: "UPDATE", payload: data });
+      dispatch({ type: ACTION_TYPES.POST.UPDATE, payload: data });
     } catch (error) {
       console.log("Error: ", error.message);
     }
@@ -42,7 +43,7 @@ export const deletePost = (id) => {
     try {
       await api.deletePost(id);
 
-      dispatch({ type: "DELETE", payload: id });
+      dispatch({ type: ACTION_TYPES.POST.DELETE, payload: id });
     } catch (error) {
       console.log("Error: ", error.message);
     }
@@ -53,7 +54,7 @@ export const likePost = (id) => {
     try {
       const { data } = await api.likePost(id);
 
-      dispatch({ type: "LIKE", payload: data });
+      dispatch({ type: ACTION_TYPES.POST.UPDATE, payload: data });
     } catch (error) {
       console.log("Error: ", error.message);
     }
