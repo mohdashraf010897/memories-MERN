@@ -14,7 +14,6 @@ module.exports = {
     },
     ecmaVersion: 2018,
     sourceType: "module",
-    requireConfigFile: false,
   },
   parser: "babel-eslint",
   plugins: ["react"],
@@ -24,7 +23,7 @@ module.exports = {
     "linebreak-style": 0,
     "react/state-in-constructor": 0,
     "import/prefer-default-export": 0,
-    "max-len": [2, 250],
+    "max-len": [2, 500],
     "no-multiple-empty-lines": [
       "error",
       {
