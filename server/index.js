@@ -17,7 +17,6 @@ app.use("/", (req, res) => {
   res.send("Greetings from memories API");
 });
 // use mongodb to store data - atlas
-
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const PORT = process.env.PORT || 5001;
