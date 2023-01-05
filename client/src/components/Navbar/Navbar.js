@@ -56,7 +56,7 @@ const Navbar = () => {
             variant="contained"
             color="primary"
           >
-            Signin
+            Sign in
           </Button>
         )}
       </Toolbar>
