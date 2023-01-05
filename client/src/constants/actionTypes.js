@@ -5,4 +5,8 @@ export default {
     DELETE: "DELETE",
     FETCH_ALL: "FETCH_ALL",
   },
+  AUTH: {
+    AUTH: "AUTH",
+    LOGOUT: "LOGOUT",
+  },
 };
