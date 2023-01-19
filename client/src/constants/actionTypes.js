@@ -8,5 +8,7 @@ export default {
   AUTH: {
     AUTH: "AUTH",
     LOGOUT: "LOGOUT",
+    SIGNIN: "SIGNIN",
+    SIGNUP: "SIGNUP",
   },
 };

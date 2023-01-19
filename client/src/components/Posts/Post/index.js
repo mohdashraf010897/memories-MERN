@@ -18,13 +18,21 @@ import { deletePost, likePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const { selectedFile, title, message, creator, createdAt, tags, likeCount } =
-    post;
+  const {
+    selectedFile,
+    title,
+    message,
+    name,
+    creator,
+    createdAt,
+    tags,
+    likes,
+  } = post;
   return (
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={selectedFile} title={title} />
       <div className={classes.overlay}>
-        <Typography variant="h6">{creator}</Typography>
+        <Typography variant="h6">{name ?? creator}</Typography>
         <Typography variant="body2">{moment(createdAt).fromNow()}</Typography>
       </div>
       <div className={classes.overlay2}>
@@ -66,7 +74,7 @@ const Post = ({ post, setCurrentId }) => {
           }}
         >
           <ThumbUpAltIcon fontSize="small" />
-          &nbsp; Like&nbsp; {likeCount}
+          &nbsp; Like&nbsp; {likes?.length}
         </Button>
         <Button
           color="primary"

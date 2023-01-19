@@ -14,17 +14,37 @@ import Input from "./Input";
 import { parseJwt } from "../../utils";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { triggerAuth } from "../../actions/auth";
+import { signinAction, signupAction, triggerAuth } from "../../actions/auth";
+
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 const Auth = () => {
   const history = useHistory();
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState(initialState);
   const classes = useStyles();
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
-  const handleSubmit = () => {};
 
-  const handleChange = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (isSignup) {
+      dispatch(signupAction(formData, history));
+    } else {
+      dispatch(signinAction(formData, history));
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleShowPassword = () => {
     setShowPassword((prev) => !prev);
