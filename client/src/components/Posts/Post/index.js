@@ -19,16 +19,7 @@ import { deletePost, likePost } from "../../../actions/posts";
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const {
-    selectedFile,
-    title,
-    message,
-    name,
-    creator,
-    createdAt,
-    tags,
-    likes,
-  } = post;
+  const { selectedFile, title, message, name, creator, createdAt, tags } = post;
 
   const user = JSON.parse(localStorage.getItem("profile"));
 
