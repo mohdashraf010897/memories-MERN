@@ -2,8 +2,7 @@
 
 A MERN stack application to create and store memories to cherish later.
 
-## Take ways
----
+## Take ways 🚀
 - CRUD
 - Support JWT auth
 - Supports Google auth
